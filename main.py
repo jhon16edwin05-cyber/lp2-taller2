@@ -1,6 +1,8 @@
 
-from flask import Flask, render_template, redirect
-from flask import Flask, render_template, redirect  # type: ignore
+try:
+    from flask import Flask, render_template, redirect
+except ImportError as e:
+    raise RuntimeError("Flask is required to run this application. Install it with 'pip install flask'.") from e
 import sqlite3
 from pprint import pprint
 
@@ -39,6 +41,5 @@ def ruta_producto(pid):
 
 # programa principal
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', debug=True)
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host='0.0.0.0', debug=True)
+
