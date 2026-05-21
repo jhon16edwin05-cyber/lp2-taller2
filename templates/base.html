@@ -1,9 +1,15 @@
 <!doctype html>
 <html>
   <head>
-
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>{% block titulo %}{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
   </head>
   <body>
-
+      <header>
+        <a href="{{ url_for('ruta_raiz') }}"><img alt="Título" src="{{ url_for('static', filename='imagenes/titulo.png') }}"></a>
+      </header>
+    {% block contenido %}{% endblock %}
   </body>
 </html>
